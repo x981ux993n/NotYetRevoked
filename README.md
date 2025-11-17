@@ -2,9 +2,8 @@
 
 **Automated Windows Driver Analysis Pipeline for LOLDriver Detection**
 
-A comprehensive Docker-based pipeline for analyzing Windows kernel drivers to identify potential "Living Off The Land" (LOL) drivers that can be abused for malicious purposes. This project combines pre-screening analysis with deep IDA Pro reverse engineering to systematically identify drivers with dangerous capabilities.
+A Docker based pipeline for analyzing Windows kernel drivers to identify potential "Living Off The Land" (LOL) drivers that can be abused for malicious purposes. This project combines pre-screening analysis with deep IDA Pro reverse engineering to systematically identify drivers with dangerous capabilities.
 
-## 🎯 Overview
 
 This pipeline implements a two-phase approach to driver analysis:
 
@@ -20,7 +19,6 @@ This pipeline implements a two-phase approach to driver analysis:
 - **Token/Privilege Manipulation**: Security token tampering
 - **Callback Removal**: Security callback bypass
 
-## 🏗️ Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -52,8 +50,6 @@ This pipeline implements a two-phase approach to driver analysis:
               │  Remote Access   │
               └──────────────────┘
 ```
-
-## 🚀 Quick Start
 
 ### Prerequisites
 
@@ -149,8 +145,6 @@ docker-compose exec ida-analyzer python3 /analysis/scripts/pipeline.py \
     --ida-path /custom/ida
 ```
 
-## 📊 Analysis Methodology
-
 ### Phase 1: Import Screening
 
 The pre-analysis phase examines PE imports to identify suspicious API combinations:
@@ -186,7 +180,7 @@ Example output identifies:
 - Input buffer structure
 - Complete exploitation path
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 NotYetRevoked/
@@ -206,7 +200,7 @@ NotYetRevoked/
 └── README.md
 ```
 
-## 🔍 Output Format
+## Output Format
 
 ### Screening Results
 
@@ -260,20 +254,7 @@ NotYetRevoked/
   "suspicious_functions": [...]
 }
 ```
-
-## 🛡️ Security Considerations
-
-This tool is designed for **defensive security research** and **authorized testing**:
-
-- ✅ Security research and analysis
-- ✅ Authorized penetration testing
-- ✅ CTF competitions
-- ✅ Malware analysis and detection
-- ✅ Building detection signatures
-
-**Important**: Only analyze drivers you have authorization to examine. This tool is for defensive purposes.
-
-## 🌐 Tailscale Integration
+## Tailscale Integration
 
 Remote access to your analysis environment:
 
@@ -288,7 +269,7 @@ Remote access to your analysis environment:
 ssh user@ida-analysis-node
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### IDA Pro Not Found
 
@@ -315,25 +296,16 @@ sudo usermod -aG docker $USER
 # Edit: timeout=600 to higher value
 ```
 
-## 📚 References
+## References
 
 - [LOLDrivers.io](https://loldrivers.io) - Living Off The Land Drivers database
 - [Headless IDA](https://github.com/DennyDai/headless-ida) - Automated IDA Pro analysis
 - [Windows Driver Development](https://docs.microsoft.com/windows-hardware/drivers/)
 - [IDA Pro Python SDK](https://hex-rays.com/products/ida/support/idapython_docs/)
 
-## 🤝 Contributing
+## AI Disclosure
+- Used Claude Code + 4.5 Sonnet.
 
-Contributions welcome! Please:
+##  Disclaimer
 
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
-
-## 📄 License
-
-This project is for security research and educational purposes.
-
-## ⚠️ Disclaimer
-
-This tool is provided for legitimate security research and defensive purposes only. Users are responsible for ensuring they have proper authorization before analyzing any software. The authors assume no liability for misuse.
+This tool is provided for legitimate security research and defensive purposes only. Users are responsible for ensuring they have proper authorization before analyzing any software. The authors assume no liability for misuse. 
