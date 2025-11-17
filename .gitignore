@@ -1,0 +1,55 @@
+# Environment files
+.env
+
+# IDA Pro installation (licensed software)
+ida/
+*.idb
+*.i64
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+
+# Driver samples
+drivers/
+*.sys
+*.dll
+*.exe
+
+# Analysis results
+results/
+*.json
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Docker
+docker-compose.override.yml
+
+# Tailscale
+tailscale-state/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Temp files
+tmp/
+temp/
