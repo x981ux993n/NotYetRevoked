@@ -7,15 +7,21 @@ services:
       dockerfile: Dockerfile
     container_name: headless-ida-analyzer
     volumes:
+      # Input/output directories
       - ./drivers:/analysis/drivers
       - ./results:/analysis/results
       - ./scripts:/analysis/scripts
-      - ./ida:/ida
+      # Optional: Mount external IDA installation
+      # If ida/ directory exists, it will be mounted and override built-in IDA
+      # This allows flexibility: either build IDA into image OR mount external installation
+      - ./ida:/opt/ida:ro
     networks:
       - analysis-net
     environment:
-      - IDA_PATH=/ida
-      - PYTHONPATH=/ida/python
+      - IDA_PATH=/opt/ida
+      - PYTHONPATH=/opt/ida/python
+      - TVHEADLESS=1
+      - QT_QPA_PLATFORM=offscreen
     stdin_open: true
     tty: true
     restart: unless-stopped

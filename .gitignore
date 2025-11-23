@@ -1,8 +1,9 @@
 # Environment files
 .env
 
-# IDA Pro installation (licensed software)
+# IDA Pro installation (licensed software - don't commit)
 ida/
+ida_installer/
 *.idb
 *.i64
 *.id0
@@ -11,7 +12,7 @@ ida/
 *.nam
 *.til
 
-# Driver samples
+# Driver samples (don't commit potentially malicious files)
 drivers/
 *.sys
 *.dll
@@ -19,6 +20,7 @@ drivers/
 
 # Analysis results
 results/
+setup_logs/
 *.json
 *.log
 
