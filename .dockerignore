@@ -1,0 +1,67 @@
+# Don't copy these to Docker build context (speeds up builds)
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation (not needed in container)
+*.md
+docs/
+QUICKSTART.md
+
+# Results and logs (large, not needed for build)
+results/
+setup_logs/
+*.log
+
+# Driver samples (not needed during build)
+drivers/
+*.sys
+*.dll
+*.exe
+
+# IDB files (not needed during build)
+*.idb
+*.i64
+*.id0
+*.id1
+*.id2
+
+# Environment (contains secrets)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Temp
+tmp/
+temp/
+
+# Docker
+docker-compose.override.yml
+Dockerfile.dev
+
+# External IDA (if user is using volume mount instead of build-in)
+# ida/ is intentionally NOT in .dockerignore - we may want to copy it during build
+# Only ignore it if you're using volume mount exclusively
